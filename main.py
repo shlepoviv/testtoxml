@@ -4,7 +4,7 @@ from docx import Document
 
 from src.class_moodle_question import MoodleQuestion
 
-DATA_DIR = 'data'
+from conf import DATA_DIR
 
 def get_list_file():
     res = []
@@ -143,15 +143,7 @@ def export_to_xml(questions:list,file_name):
         eltag = ET.SubElement(eltags,'tag')
         eltext = ET.SubElement(eltag,'text')
         eltext.text = question.tag
-#  <tags>
-#    <tag>
-#      <text>keyword1</text>
-#    </tag>
-#    <tag>
-#      <text>keyword2</text>
-#    </tag>
-#    ...
-#  </tags>
+
 
 
     tree = ET.ElementTree(quiz)
