@@ -1,1 +1,2 @@
 DATA_DIR = 'data'
+POINTS_IN_TOPIC = 100

@@ -4,3 +4,4 @@ class MoodleQuestion():
         self.answer_options = []
         self.correct_answer_number = None
         self.tag = None
+        self.points = None

@@ -42,7 +42,7 @@ def export_to_xml(questions:list,file_name):
         eltext = ET.SubElement(elgeneralfeedback,'text')
 
         eldefaultgrade = ET.SubElement(elquestion,'defaultgrade')
-        eldefaultgrade.text = '1'
+        eldefaultgrade.text = str(question.points)
 
         elpenalty = ET.SubElement(elquestion,'penalty')
         elpenalty.text = '0.3333333'
@@ -104,4 +104,5 @@ def export_to_xml(questions:list,file_name):
 
     tree = ET.ElementTree(quiz)
     ET.indent(tree, '   ')
-    tree.write(Path(DATA_DIR,file_name), encoding="utf-8", xml_declaration=True)
+    with open(Path(DATA_DIR,file_name),'wb') as f:
+        tree.write(f, encoding="utf-8", xml_declaration=True)
