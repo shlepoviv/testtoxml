@@ -75,3 +75,4 @@ for file in get_list_file():
     parse_doc(doc,file.stem.lower(),list_questions)
 distribute_points(list_questions)
 export_to_xml(list_questions,'text.xml')
+print(f'Выгруженно {len(list_questions)} вопросов')
