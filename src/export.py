@@ -83,7 +83,7 @@ def export_to_xml(questions:list,file_name):
 
         elshownumcorrect = ET.SubElement(elquestion,'shownumcorrect')
 
-        for answer in enumerate(question.answer_options):
+        for answer in enumerate(question.answer_options,1):
             elanswer = ET.SubElement(elquestion,'answer')  
             elanswer.set('format','html')
             elanswer.set('fraction','100' if answer[0] == question.correct_answer_number else '0')
